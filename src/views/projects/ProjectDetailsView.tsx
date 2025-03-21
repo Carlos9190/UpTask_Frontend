@@ -8,6 +8,7 @@ import EditTaskData from "@/components/tasks/EditTaskData"
 import TaskModalDetails from "@/components/tasks/TaskModalDetails"
 import { useAuth } from "@/hooks/useAuth"
 import { isManager } from "@/utils/policies"
+import Spinner from "@/components/Spinner"
 
 export default function ProjectDetailsView() {
     const { data: user, isLoading: authLoading } = useAuth()
@@ -22,7 +23,7 @@ export default function ProjectDetailsView() {
     })
 
     const canEdit = useMemo(() => data?.manager === user?._id, [data, user])
-    if (isLoading && authLoading) return 'Cargando'
+    if (isLoading && authLoading) return <Spinner />
     if (isError) return <Navigate to='/404' />
 
     if (data && user) return (

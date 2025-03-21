@@ -7,6 +7,7 @@ import { getProjects } from "@/api/ProjectAPI"
 import { useAuth } from '@/hooks/useAuth'
 import { isManager } from '@/utils/policies'
 import DeleteProjectModal from '@/components/projects/DeleteProjectModal'
+import Spinner from '@/components/Spinner'
 
 export default function DashboardView() {
     const location = useLocation()
@@ -17,7 +18,8 @@ export default function DashboardView() {
         queryFn: getProjects
     })
 
-    if (isLoading || authLoading) return 'Cargando...'
+    if (isLoading || authLoading) return <Spinner />
+
     if (data && user) return (
         <>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-center md:text-left">Mis proyectos</h1>
