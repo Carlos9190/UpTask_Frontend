@@ -84,7 +84,7 @@ export default function TaskList({ tasks, canEdit }: TaskListProps) {
                 <DndContext onDragEnd={handleDragEnd}>
                     {Object.entries(groupedTasks).map(([status, tasks]) => (
                         <div key={status} className="min-h-[150px] bg-white rounded-lg shadow-md p-4">
-                            <h3 className={`capitalize text-lg font-semibold p-3 border-t-8 ${statusStyles[status]}`}>
+                            <h3 className={`text-lg font-semibold p-3 border-t-8 ${statusStyles[status]}`}>
                                 {statusTranslations[status]}
                             </h3>
 

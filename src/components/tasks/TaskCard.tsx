@@ -76,7 +76,7 @@ export default function TaskCard({ task, canEdit }: TaskCardProps) {
                                     className='block px-3 py-1 text-sm leading-6 text-gray-900'
                                     onClick={() => navigate(location.pathname + `?viewTask=${task._id}`)}
                                 >
-                                    Ver Tarea
+                                    Ver tarea
                                 </button>
                             </Menu.Item>
 
@@ -88,7 +88,7 @@ export default function TaskCard({ task, canEdit }: TaskCardProps) {
                                             className='block px-3 py-1 text-sm leading-6 text-gray-900'
                                             onClick={() => navigate(location.pathname + `?editTask=${task._id}`)}
                                         >
-                                            Editar Tarea
+                                            Editar tarea
                                         </button>
                                     </Menu.Item>
 
@@ -98,7 +98,7 @@ export default function TaskCard({ task, canEdit }: TaskCardProps) {
                                             className='block px-3 py-1 text-sm leading-6 text-red-500'
                                             onClick={() => mutate({ projectId, taskId: task._id })}
                                         >
-                                            Eliminar Tarea
+                                            Eliminar tarea
                                         </button>
                                     </Menu.Item>
                                 </>

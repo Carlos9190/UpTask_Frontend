@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import { deleteProject } from '@/api/ProjectAPI';
 
 export default function DeleteProjectModal() {
-    const initialValues : CheckPasswordForm = {
+    const initialValues: CheckPasswordForm = {
         password: ''
     }
     const location = useLocation()
@@ -73,46 +73,33 @@ export default function DeleteProjectModal() {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
-
-                                <Dialog.Title
-                                    as="h3"
-                                    className="font-black text-4xl  my-5"
-                                >Eliminar Proyecto </Dialog.Title>
-
-                                <p className="text-xl font-bold">Confirma la eliminación del proyecto {''}
+                            <Dialog.Panel className="w-full max-w-lg sm:max-w-xl lg:max-w-2xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-6 sm:p-10">
+                                <Dialog.Title className="font-black text-2xl sm:text-3xl my-3 sm:my-5">
+                                    Eliminar proyecto
+                                </Dialog.Title>
+                                <p className="text-lg sm:text-xl font-bold">
+                                    Confirma la eliminación del proyecto {' '}
                                     <span className="text-fuchsia-600">colocando tu password</span>
                                 </p>
 
-                                <form
-                                    className="mt-10 space-y-5"
-                                    onSubmit={handleSubmit(handleForm)}
-                                    noValidate
-                                >
-
-                                    <div className="flex flex-col gap-3">
-                                        <label
-                                            className="font-normal text-2xl"
-                                            htmlFor="password"
-                                        >Password</label>
+                                <form className="mt-6 space-y-4 sm:space-y-5" onSubmit={handleSubmit(handleForm)} noValidate>
+                                    <div className="flex flex-col gap-2 sm:gap-3">
+                                        <label className="font-medium text-lg" htmlFor="password">Password</label>
                                         <input
                                             id="password"
                                             type="password"
-                                            placeholder="Password Inicio de Sesión"
-                                            className="w-full p-3  border-gray-300 border"
-                                            {...register("password", {
-                                                required: "El password es obligatorio",
-                                            })}
+                                            placeholder="Password de registro"
+                                            className="w-full p-3 border border-gray-300 rounded-lg"
+                                            {...register("password", { required: "El password es obligatorio" })}
                                         />
                                         {errors.password && (
                                             <ErrorMessage>{errors.password.message}</ErrorMessage>
                                         )}
                                     </div>
-
                                     <input
                                         type="submit"
-                                        className=" bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3  text-white font-black  text-xl cursor-pointer"
-                                        value='Eliminar Proyecto'
+                                        className="bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3 text-white font-black text-lg rounded-lg cursor-pointer"
+                                        value='Eliminar proyecto'
                                     />
                                 </form>
                             </Dialog.Panel>

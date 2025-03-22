@@ -28,7 +28,7 @@ export default function ChangePasswordView() {
     <>
       <div className="mx-auto max-w-3xl">
 
-        <h1 className="text-5xl font-black ">Cambiar Password</h1>
+        <h1 className="text-5xl font-black ">Cambiar password</h1>
         <p className="text-2xl font-light text-gray-500 mt-5">Utiliza este formulario para cambiar tu password</p>
 
         <form
@@ -89,7 +89,7 @@ export default function ChangePasswordView() {
               placeholder="Repetir nuevo password"
               className="w-full p-3  border border-gray-200"
               {...register("password_confirmation", {
-                required: "Este campo es obligatorio",
+                required: "Repetir el password es obligatorio",
                 validate: value => value === password || 'Los Passwords no son iguales'
               })}
             />

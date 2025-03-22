@@ -126,7 +126,7 @@ export default function DashboardView() {
                 <p className="text-center py-10">
                     No hay proyectos aún {' '}
                     <Link className="text-fuchsia-500 font-bold" to='/projects/create'>
-                        Crear proyecto
+                        crear proyecto
                     </Link>
                 </p>
             )}

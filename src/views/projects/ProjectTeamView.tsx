@@ -99,7 +99,7 @@ export default function ProjectTeamView() {
                                                     className='block w-full px-4 py-2 text-sm text-red-500 hover:bg-red-100 text-center'
                                                     onClick={() => mutate({ projectId, userId: member._id })}
                                                 >
-                                                    Eliminar del Proyecto
+                                                    Eliminar del proyecto
                                                 </button>
                                             </Menu.Item>
                                         </Menu.Items>

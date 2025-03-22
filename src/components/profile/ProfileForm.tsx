@@ -43,7 +43,7 @@ export default function ProfileForm({ data } : ProfileFormProps) {
                         <input
                             id="name"
                             type="text"
-                            placeholder="Tu Nombre"
+                            placeholder="Tu nombre"
                             className="w-full p-3  border border-gray-200"
                             {...register("name", {
                                 required: "Nombre de usuario es obligatoro",
@@ -58,11 +58,11 @@ export default function ProfileForm({ data } : ProfileFormProps) {
                         <label
                             className="text-sm uppercase font-bold"
                             htmlFor="password"
-                        >E-mail</label>
+                        >Email</label>
                         <input
                             id="text"
                             type="email"
-                            placeholder="Tu Email"
+                            placeholder="Tu email"
                             className="w-full p-3  border border-gray-200"
                             {...register("email", {
                                 required: "EL e-mail es obligatorio",

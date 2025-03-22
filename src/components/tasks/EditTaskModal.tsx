@@ -83,7 +83,7 @@ export default function EditTaskModal({ data, taskId }: EditTaskModalProps) {
                                     as="h3"
                                     className="font-black text-4xl  my-5"
                                 >
-                                    Editar Tarea
+                                    Editar tarea
                                 </Dialog.Title>
 
                                 <p className="text-xl font-bold">Realiza cambios a una tarea en {''}
