@@ -30,27 +30,31 @@ export default function NewPasswordToken({ token, setToken, setIsValidToken }: N
     const handleComplete = (token: ConfirmToken['token']) => mutate({ token })
 
     return (
-        <div className="flex flex-col items-center justify-center w-full max-w-xs sm:max-w-sm md:max-w-md mt-10">
-            <form className="space-y-8 p-6 sm:p-10 rounded-lg bg-white w-full">
-                <label className="font-normal text-lg sm:text-2xl text-center block">
+        <>
+            <form className="w-full max-w-xs sm:max-w-sm bg-white shadow-md rounded-lg p-5 mt-4 flex-grow">
+                <label className="text-sm font-medium text-center block">
                     Código de 6 dígitos
                 </label>
-                <div className="flex justify-center gap-2 sm:gap-4">
+                <div className="flex justify-center gap-2 mt-3">
                     <PinInput value={token} onChange={handleChange} onComplete={handleComplete}>
-                        {Array.from({ length: 6 }).map((_, index) => (
+                        {[...Array(6)].map((_, index) => (
                             <PinInputField
                                 key={index}
-                                className="h-10 w-10 sm:h-12 sm:w-12 p-2 sm:p-3 rounded-lg border-gray-300 border placeholder-white text-center"
+                                className="w-9 h-9 sm:w-10 sm:h-10 rounded-md border-gray-300 border placeholder-white text-center text-lg"
                             />
                         ))}
                     </PinInput>
                 </div>
             </form>
-            <nav className="mt-6 sm:mt-10 flex flex-col space-y-4">
-                <Link to='/auth/forgot-password' className="text-center text-gray-300 font-normal hover:text-fuchsia-500">
+
+            <nav className="mt-4">
+                <Link
+                    to="/auth/request-code"
+                    className="text-center text-gray-300 text-sm hover:text-fuchsia-500 block"
+                >
                     Solicitar un nuevo código
                 </Link>
             </nav>
-        </div>
+        </>
     )
 }

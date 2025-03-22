@@ -27,7 +27,7 @@ export default function ProfileForm({ data } : ProfileFormProps) {
     return (
         <>
             <div className="mx-auto max-w-3xl g">
-                <h1 className="text-5xl font-black ">Mi Perfil</h1>
+                <h1 className="text-5xl font-black ">Mi perfil</h1>
                 <p className="text-2xl font-light text-gray-500 mt-5">Aquí puedes actualizar tu información</p>
 
                 <form

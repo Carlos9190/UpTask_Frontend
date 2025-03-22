@@ -70,10 +70,10 @@ export default function ProjectTeamView() {
             {data.length ? (
                 <ul role="list" className="divide-y divide-gray-200 border border-gray-200 mt-6 bg-white shadow-lg rounded-lg">
                     {data?.map((member) => (
-                        <li key={member._id} className="flex flex-col sm:flex-row justify-between gap-4 px-5 py-6 items-center">
+                        <li key={member._id} className="flex flex-row justify-between gap-3 px-4 py-4 items-center">
                             <div className="flex items-center gap-4">
-                                <div className="text-center sm:text-left">
-                                    <p className="text-xl sm:text-2xl font-black text-gray-600">{member.name}</p>
+                                <div className="text-left">
+                                    <p className="text-lg sm:text-xl font-black text-gray-600">{member.name}</p>
                                     <p className="text-sm text-gray-400">{member.email}</p>
                                 </div>
                             </div>
@@ -110,8 +110,9 @@ export default function ProjectTeamView() {
                     ))}
                 </ul>
             ) : (
-                <p className='text-center py-16 text-lg sm:text-xl text-gray-500'>No hay miembros en este equipo</p>
+                <p className='text-center py-12 sm:py-16 text-lg sm:text-xl text-gray-500'>No hay miembros en este equipo</p>
             )}
+
 
             <AddMemberModal />
         </>

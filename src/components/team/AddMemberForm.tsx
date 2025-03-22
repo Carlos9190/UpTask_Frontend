@@ -26,7 +26,7 @@ export default function AddMemberForm() {
 
     const resetData = () => {
         reset(),
-        mutation.reset()
+            mutation.reset()
     }
 
     return (
@@ -40,17 +40,17 @@ export default function AddMemberForm() {
                     <label
                         className="font-normal text-2xl"
                         htmlFor="name"
-                    >E-mail del usuario</label>
+                    >Email del usuario</label>
                     <input
                         id="name"
                         type="text"
-                        placeholder="E-mail del usuario a agregar"
+                        placeholder="Email del usuario a agregar"
                         className="w-full p-3  border-gray-300 border"
                         {...register("email", {
-                            required: "El Email es obligatorio",
+                            required: "El email es obligatorio",
                             pattern: {
                                 value: /\S+@\S+\.\S+/,
-                                message: "E-mail no válido",
+                                message: "Email no válido",
                             },
                         })}
                     />
@@ -66,9 +66,12 @@ export default function AddMemberForm() {
                 />
             </form>
             <div className="mt-10">
-                {mutation.isPending && <p className="text-center">cargando</p>}
+                {mutation.isPending && <div className="flex justify-center items-center">
+                    <div className="w-10 h-10 border-4 border-gray-300 border-t-fuchsia-500 rounded-full animate-spin">
+                    </div>
+                </div>}
                 {mutation.error && <p className="text-center">{mutation.error.message}</p>}
-                {mutation.data && <SearchResult user={mutation.data} reset={resetData}/>}
+                {mutation.data && <SearchResult user={mutation.data} reset={resetData} />}
             </div>
         </>
     )

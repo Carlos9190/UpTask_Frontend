@@ -47,52 +47,50 @@ export default function NewPasswordForm({ token }: NewPasswordFormProps) {
     const password = watch("password");
 
     return (
-        <div className="flex flex-col items-center justify-center  px-4 sm:px-6 lg:px-8">
-            <form
-                onSubmit={handleSubmit(handleNewPassword)}
-                className="w-full max-w-md bg-white mt-10 p-6 sm:p-10 rounded-lg shadow-md space-y-6"
-                noValidate
-            >
-                <div className="flex flex-col gap-3">
-                    <label className="font-normal text-lg sm:text-2xl">Password</label>
-                    <input
-                        type="password"
-                        placeholder="Password de Registro"
-                        className="w-full p-3 border-gray-300 border rounded-lg"
-                        {...register("password", {
-                            required: "El Password es obligatorio",
-                            minLength: {
-                                value: 8,
-                                message: "El Password debe ser mínimo de 8 caracteres",
-                            },
-                        })}
-                    />
-                    {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
-                </div>
-
-                <div className="flex flex-col gap-3">
-                    <label className="font-normal text-lg sm:text-2xl">Repetir Password</label>
-                    <input
-                        id="password_confirmation"
-                        type="password"
-                        placeholder="Repite Password de Registro"
-                        className="w-full p-3 border-gray-300 border rounded-lg"
-                        {...register("password_confirmation", {
-                            required: "Repetir Password es obligatorio",
-                            validate: (value) => value === password || "Los Passwords no son iguales",
-                        })}
-                    />
-                    {errors.password_confirmation && (
-                        <ErrorMessage>{errors.password_confirmation.message}</ErrorMessage>
-                    )}
-                </div>
-
+        <form
+            onSubmit={handleSubmit(handleNewPassword)}
+            className="w-full max-w-md bg-white mt-10 p-6 sm:p-10 rounded-lg shadow-md space-y-6"
+            noValidate
+        >
+            <div className="flex flex-col gap-3">
+                <label className="font-normal text-lg sm:text-2xl">Password</label>
                 <input
-                    type="submit"
-                    value="Establecer Password"
-                    className="bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3 text-white font-black text-lg sm:text-xl cursor-pointer rounded-lg"
+                    type="password"
+                    placeholder="Password nuevo"
+                    className="w-full p-3 border-gray-300 border rounded-lg"
+                    {...register("password", {
+                        required: "El Password es obligatorio",
+                        minLength: {
+                            value: 8,
+                            message: "El Password debe ser mínimo de 8 caracteres",
+                        },
+                    })}
                 />
-            </form>
-        </div>
+                {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
+            </div>
+
+            <div className="flex flex-col gap-3">
+                <label className="font-normal text-lg sm:text-2xl">Repetir password</label>
+                <input
+                    id="password_confirmation"
+                    type="password"
+                    placeholder="Repite el password nuevo"
+                    className="w-full p-3 border-gray-300 border rounded-lg"
+                    {...register("password_confirmation", {
+                        required: "Repetir Password es obligatorio",
+                        validate: (value) => value === password || "Los Passwords no son iguales",
+                    })}
+                />
+                {errors.password_confirmation && (
+                    <ErrorMessage>{errors.password_confirmation.message}</ErrorMessage>
+                )}
+            </div>
+
+            <input
+                type="submit"
+                value="Restablecer password"
+                className="bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3 text-white font-black text-lg sm:text-xl cursor-pointer rounded-lg"
+            />
+        </form>
     );
 }

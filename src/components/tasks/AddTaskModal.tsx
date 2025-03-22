@@ -9,16 +9,15 @@ import { createTask } from '@/api/TaskAPI'
 import { toast } from 'react-toastify'
 
 export default function AddTaskModal() {
-
     const navigate = useNavigate()
 
     // Leer si modal existe
     const location = useLocation()
     const queryParams = new URLSearchParams(location.search)
     const modaltask = queryParams.get('newTask')
-    const show = modaltask ? true : false
+    const show = !!modaltask
 
-    //Obtener projectId
+    // Obtener projectId
     const params = useParams()
     const projectId = params.projectId!
 
@@ -35,7 +34,7 @@ export default function AddTaskModal() {
             toast.error(error.message)
         },
         onSuccess: (data) => {
-            queryClient.invalidateQueries({queryKey: ['project', projectId]})
+            queryClient.invalidateQueries({ queryKey: ['project', projectId] })
             toast.success(data)
             reset()
             navigate(location.pathname, { replace: true })
@@ -77,20 +76,20 @@ export default function AddTaskModal() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
+                                <Dialog.Panel className="w-full max-w-4xl sm:max-w-2xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-8 sm:p-6">
                                     <Dialog.Title
                                         as="h3"
-                                        className="font-black text-4xl  my-5"
+                                        className="font-black text-3xl sm:text-2xl my-4 sm:my-3"
                                     >
-                                        Nueva Tarea
+                                        Nueva tarea
                                     </Dialog.Title>
 
-                                    <p className="text-xl font-bold">Llena el formulario y crea  {''}
+                                    <p className="text-lg sm:text-base font-bold">Llena el formulario y crea {''}
                                         <span className="text-fuchsia-600">una tarea</span>
                                     </p>
 
                                     <form
-                                        className='mt-10 space-y-3'
+                                        className='mt-6 sm:mt-4 space-y-3'
                                         onSubmit={handleSubmit(handleCreateTask)}
                                         noValidate
                                     >
@@ -101,7 +100,7 @@ export default function AddTaskModal() {
 
                                         <input
                                             type="submit"
-                                            className="bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3 text-white uppercase font-bold cursor-pointer transition-colors"
+                                            className="bg-fuchsia-600 hover:bg-fuchsia-700 w-full p-3 sm:p-2 text-white uppercase font-bold cursor-pointer transition-colors"
                                             value="Guardar tarea"
                                         />
                                     </form>

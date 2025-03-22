@@ -44,20 +44,20 @@ export const NavMenu = ({ name }: NavMenuProps) => {
                             to='/profile'
                             className='block p-2 hover:text-purple-950'
                         >
-                            Mi Perfil
+                            Mi perfil
                         </Link>
                         <Link
                             to='/'
                             className='block p-2 hover:text-purple-950'
                         >
-                            Mis Proyectos
+                            Mis proyectos
                         </Link>
                         <button
                             className='block p-2 hover:text-purple-950'
                             type='button'
                             onClick={logout}
                         >
-                            Cerrar Sesión
+                            Cerrar sesión
                         </button>
                     </div>
                 </PopoverPanel>

@@ -32,15 +32,15 @@ export default function DashboardView() {
                     className="bg-purple-400 hover:bg-purple-500 px-6 sm:px-10 py-3 text-white text-lg sm:text-xl font-bold rounded-lg transition-colors inline-block"
                     to='/projects/create'
                 >
-                    Nuevo Proyecto
+                    Nuevo proyecto
                 </Link>
             </nav>
 
             {data?.length ? (
                 <ul role="list" className="divide-y divide-gray-100 border border-gray-100 mt-10 bg-white shadow-lg rounded-lg">
                     {data.map((project) => (
-                        <li key={project._id} className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-x-6 px-5 py-6">
-                            <div className="flex flex-col sm:flex-row gap-4 w-full">
+                        <li key={project._id} className="flex flex-row justify-between gap-4 px-5 py-6">
+                            <div className="flex flex-col sm:flex-row items-start md:items-center gap-4 w-full">
                                 <div>
                                     {isManager(project.manager, user._id) ? (
                                         <p className="font-bold text-xs uppercase bg-indigo-50 text-indigo-500 border-2 border-indigo-500 rounded-lg inline-block py-1 px-5">
@@ -61,16 +61,17 @@ export default function DashboardView() {
                                         {project.projectName}
                                     </Link>
                                     <p className="text-sm text-gray-400">Cliente: {project.clientName}</p>
-                                    <p className="text-sm text-gray-400">{project.description}</p>
+                                    <p className="text-sm text-justify text-gray-400">{project.description}</p>
                                 </div>
                             </div>
 
-                            <div className="flex items-center justify-end sm:justify-start">
+                            <div className="flex items-center justify-end">
                                 <Menu as="div" className="relative">
-                                    <Menu.Button className="-m-2.5 p-2.5 text-gray-500 hover:text-gray-900" aria-label="Opciones de proyecto">
-                                        <EllipsisVerticalIcon className="h-8 w-8" aria-hidden="true" />
+                                    <Menu.Button className="p-2.5 text-gray-500 hover:text-gray-900 focus:outline-none" aria-label="Opciones de proyecto">
+                                        <EllipsisVerticalIcon className="h-6 w-6 sm:h-8 sm:w-8" aria-hidden="true" />
                                     </Menu.Button>
-                                    <Transition as={Fragment}
+                                    <Transition
+                                        as={Fragment}
                                         enter="transition ease-out duration-150"
                                         enterFrom="opacity-0 scale-95"
                                         enterTo="opacity-100 scale-100"
@@ -78,31 +79,39 @@ export default function DashboardView() {
                                         leaveFrom="opacity-100 scale-100"
                                         leaveTo="opacity-0 scale-95"
                                     >
-                                        <Menu.Items className="absolute right-0 sm:w-56 mt-2 w-48 rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
+                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 sm:w-56 rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                                             <Menu.Item>
-                                                <Link to={`/projects/${project._id}`}
-                                                    className="block px-3 py-2 text-sm text-gray-900 hover:bg-gray-100"
-                                                >
-                                                    Ver Proyecto
-                                                </Link>
+                                                {({ active }) => (
+                                                    <Link
+                                                        to={`/projects/${project._id}`}
+                                                        className={`block px-4 py-2 text-sm ${active ? 'bg-gray-100' : 'text-gray-900'}`}
+                                                    >
+                                                        Ver proyecto
+                                                    </Link>
+                                                )}
                                             </Menu.Item>
                                             {isManager(project.manager, user._id) && (
                                                 <>
                                                     <Menu.Item>
-                                                        <Link to={`/projects/${project._id}/edit`}
-                                                            className="block px-3 py-2 text-sm text-gray-900 hover:bg-gray-100"
-                                                        >
-                                                            Editar Proyecto
-                                                        </Link>
+                                                        {({ active }) => (
+                                                            <Link
+                                                                to={`/projects/${project._id}/edit`}
+                                                                className={`block px-4 py-2 text-sm ${active ? 'bg-gray-100' : 'text-gray-900'}`}
+                                                            >
+                                                                Editar proyecto
+                                                            </Link>
+                                                        )}
                                                     </Menu.Item>
                                                     <Menu.Item>
-                                                        <button
-                                                            type="button"
-                                                            className="block px-3 py-2 text-sm text-red-500 hover:bg-gray-100"
-                                                            onClick={() => navigate(location.pathname + `?deleteProject=${project._id}`)}
-                                                        >
-                                                            Eliminar Proyecto
-                                                        </button>
+                                                        {({ active }) => (
+                                                            <button
+                                                                type="button"
+                                                                className={`block w-full text-left px-4 py-2 text-sm ${active ? 'bg-gray-100 text-red-600' : 'text-red-500'}`}
+                                                                onClick={() => navigate(location.pathname + `?deleteProject=${project._id}`)}
+                                                            >
+                                                                Eliminar proyecto
+                                                            </button>
+                                                        )}
                                                     </Menu.Item>
                                                 </>
                                             )}

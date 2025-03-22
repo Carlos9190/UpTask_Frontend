@@ -86,7 +86,7 @@ export default function ChangePasswordView() {
             <input
               id="password_confirmation"
               type="password"
-              placeholder="Repetir password"
+              placeholder="Repetir nuevo password"
               className="w-full p-3  border border-gray-200"
               {...register("password_confirmation", {
                 required: "Este campo es obligatorio",
@@ -100,7 +100,7 @@ export default function ChangePasswordView() {
 
           <input
             type="submit"
-            value='Cambiar Password'
+            value='Cambiar password'
             className="bg-fuchsia-600 w-full p-3 text-white uppercase font-bold hover:bg-fuchsia-700 cursor-pointer transition-colors"
           />
         </form>

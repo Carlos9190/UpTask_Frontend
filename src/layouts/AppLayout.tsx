@@ -7,10 +7,10 @@ import { useAuth } from "@/hooks/useAuth"
 import Spinner from "@/components/Spinner"
 
 export default function AppLayout() {
+
     const { data, isError, isLoading } = useAuth()
 
-    if (isLoading) return <Spinner />
-
+    if (isLoading) <Spinner / >
     if (isError) {
         return <Navigate to='/auth/login' />
     }
@@ -19,7 +19,7 @@ export default function AppLayout() {
         <>
             <header className="bg-gray-800 py-5 px-4">
                 <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-4">
-                    <div className="w-48 sm:w-64">
+                    <div className="w-48 sm:w-64 lg:mx-0">
                         <Link to={'/'}>
                             <Logo />
                         </Link>

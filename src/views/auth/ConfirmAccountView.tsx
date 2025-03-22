@@ -38,9 +38,9 @@ export default function ConfirmAccountView() {
                 </label>
                 <div className="flex justify-center gap-2 mt-3">
                     <PinInput value={token} onChange={handleChange} onComplete={handleComplete}>
-                        {[...Array(6)].map((_, i) => (
+                        {[...Array(6)].map((_, index) => (
                             <PinInputField
-                                key={i}
+                                key={index}
                                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-md border-gray-300 border placeholder-white text-center text-lg"
                             />
                         ))}
