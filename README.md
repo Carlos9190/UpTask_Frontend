@@ -89,6 +89,7 @@ npm run dev  # or yarn dev
 ## 🤝 Contributing
 
 1️⃣ **Fork the repository**.
+
 2️⃣ **Create a branch** for your new feature or fix:
    ```bash
    git checkout -b new-feature
