@@ -35,13 +35,19 @@ npm install  # or yarn install
 ```
 
 ### 3️⃣ Start the development server
+Create a .env file in the project's root directory and define the following variable:
+```env
+VITE_API_URL=http://localhost:4001/api
+```
+
+### 4️⃣ Start the development server
 ```bash
 npm run dev  # or yarn dev
 ```
 
 ---
 
-## 📦 Dependencies
+## 📚 Dependencies
 
 ### 📌 Main Dependencies
 ```json
@@ -83,7 +89,6 @@ npm run dev  # or yarn dev
   "vite": "^6.0.5"
 }
 ```
-
 ---
 
 ## 🤝 Contributing
@@ -102,9 +107,10 @@ npm run dev  # or yarn dev
 
 ---
 
-## 📬 Contact
+## 📩 Contact
 
 Developed by **Carlos Ibarra**.
 
 - GitHub: [Carlos9190](https://github.com/Carlos9190)
 - Backend Repository: [UpTask_Backend](https://github.com/Carlos9190/UpTask_Backend)
+
