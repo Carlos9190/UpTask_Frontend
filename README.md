@@ -1,50 +1,109 @@
-# React + TypeScript + Vite
+# UpTask Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Description
+This is the frontend for the **UpTask** project, a task management application developed with the **MERN stack** (*MongoDB, Express.js, React, and Node.js*). It provides a user interface for managing projects and tasks.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Technologies Used
 
-## Expanding the ESLint configuration
+- **React.js** - JavaScript library for building user interfaces
+- **Vite** - Fast build tool for modern web projects
+- **TypeScript** - Static typing for JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Hook Form** - Form handling in React
+- **Axios** - HTTP client for API requests
+- **React Router DOM** - Client-side routing
+- **React Query** - Data-fetching library
+- **Chakra UI** - Component library for building accessible UI
+- **Zod** - Schema validation
+- **React Toastify** - Toast notifications
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/Carlos9190/UpTask_Frontend.git
+cd UpTask_Frontend
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 2️⃣ Install dependencies
+```bash
+npm install  # or yarn install
 ```
+
+### 3️⃣ Start the development server
+```bash
+npm run dev  # or yarn dev
+```
+
+---
+
+## 📦 Dependencies
+
+### 📌 Main Dependencies
+```json
+{
+  "@chakra-ui/pin-input": "^2.1.0",
+  "@dnd-kit/core": "^6.3.1",
+  "@headlessui/react": "^2.2.0",
+  "@heroicons/react": "^2.2.0",
+  "@tailwindcss/forms": "^0.5.10",
+  "@tanstack/react-query": "^5.66.0",
+  "@tanstack/react-query-devtools": "^5.66.0",
+  "axios": "^1.7.9",
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-hook-form": "^7.54.2",
+  "react-router-dom": "^7.1.5",
+  "react-toastify": "^11.0.3",
+  "zod": "^3.24.1"
+}
+```
+
+### 🔧 Development Dependencies
+```json
+{
+  "@eslint/js": "^9.17.0",
+  "@types/node": "^22.13.0",
+  "@types/react": "^18.3.18",
+  "@types/react-dom": "^18.3.5",
+  "@vitejs/plugin-react-swc": "^3.5.0",
+  "autoprefixer": "^10.4.20",
+  "eslint": "^9.17.0",
+  "eslint-plugin-react-hooks": "^5.0.0",
+  "eslint-plugin-react-refresh": "^0.4.16",
+  "globals": "^15.14.0",
+  "postcss": "^8.5.1",
+  "tailwindcss": "^3.4.17",
+  "typescript": "~5.6.2",
+  "typescript-eslint": "^8.18.2",
+  "vite": "^6.0.5"
+}
+```
+
+---
+
+## 🤝 Contributing
+
+1️⃣ **Fork the repository**.
+2️⃣ **Create a branch** for your new feature or fix:
+   ```bash
+   git checkout -b new-feature
+   ```
+3️⃣ **Make changes and commit them**:
+   ```bash
+   git commit -m "Add new feature"
+   ```
+4️⃣ **Submit a Pull Request** for review.
+
+---
+
+## 📬 Contact
+
+Developed by **Carlos Ibarra**.
+
+- GitHub: [Carlos9190](https://github.com/Carlos9190)
+- Backend Repository: [UpTask_Backend](https://github.com/Carlos9190/UpTask_Backend)
