@@ -34,7 +34,7 @@ cd UpTask_Frontend
 npm install  # or yarn install
 ```
 
-### 3️⃣ Start the development server
+### 3️⃣ Configure environment variables
 Create a .env file in the project's root directory and define the following variable:
 ```env
 VITE_API_URL=http://localhost:4001/api
